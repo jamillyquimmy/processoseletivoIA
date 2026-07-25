@@ -2,9 +2,9 @@ name: Validação Automática do Desafio Edge AI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
  
