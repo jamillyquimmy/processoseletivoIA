@@ -2,16 +2,12 @@ name: Validação Automática do Desafio Edge AI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
-  # ------------------------------------------------------------------
-  # 1) Detecta qual dos três projetos o candidato escolheu, verificando
-  #    quais pastas ainda existem em projetos/. O candidato deve ter
-  #    apagado as pastas dos projetos NÃO escolhidos.
-  # ------------------------------------------------------------------
+ 
   detect:
     runs-on: ubuntu-latest
     outputs:
@@ -51,11 +47,6 @@ jobs:
           echo "validate_script=$SCRIPT" >> "$GITHUB_OUTPUT"
           echo "✅ Projeto detectado: $PROJECT (script de validação: $SCRIPT)"
 
-  # ------------------------------------------------------------------
-  # 2) Valida os artefatos entregues pelo candidato (modelo treinado +
-  #    modelo otimizado JÁ DEVEM ESTAR no repositório — a CI não treina
-  #    nada nesta etapa, apenas confere o que foi entregue).
-  # ------------------------------------------------------------------
   validate:
     needs: detect
     runs-on: ubuntu-latest
