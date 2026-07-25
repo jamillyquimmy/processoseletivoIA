@@ -60,7 +60,7 @@ def main():
         validation_split=0.2,
         callbacks=[early_stopping]
     )
-l
+
     test_loss, test_acc = model.evaluate(x_test, y_test, verbose=1)
     print(f"\nAcurácia no conjunto de teste: {test_acc * 100:.2f}%")
 
